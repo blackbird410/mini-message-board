@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= 'Add your message'
+
+    form(role='form' method='POST' action='/new')
+        div.form-group
+            label(for='name') Name:
+            input#name.form.form-control(type='text', placeholder='Enter your name' name='authorName')
+            br
+        div.form-group
+            label(for='text') 
+            | Text:
+            textarea#text(name='messageText', rows='8', cols="40", placeholder="Enter your message", v-model='desc', required)
+            br
+        div.btn-group
+            button.btn.btn-primary(type='submit', name='asdf') Submit
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+    |
+    a(href='/') Message board
+        
+            

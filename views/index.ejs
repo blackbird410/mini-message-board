@@ -9,10 +9,13 @@
         <a href="/new" id="new-message">Add a new message</a>
         <ul class="message-list">
                 <% messages.map((message) => { %> 
-                    <li class="message-wrapper">
-                        <h3 class="message-author"><%= message.user %></h3>
-                        <span class="message-date"><%= message.added %></span>
-                        <p class="message-text"><%= message.text %></p>
+                    <li>
+                        <div class="message-wrapper">
+                            <h3 class="message-author"><%= message.user %></h3>
+                            <span class="message-date"><%= message.added %></span>
+                            <p class="message-text"><%= message.text %></p>
+                        </div>
+                        <a href="/message/<%= message.id %>" class="open-message-btn">Open</a>
                     </li> 
                 <% }) %>
         </ul>
